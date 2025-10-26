@@ -23,3 +23,23 @@ kbd { border: 1px solid #d9deea; border-bottom-width: 2px; border-radius: 5px; b
 .sidebar-section { margin-top: 26px; }
 .sidebar-label { color: #96a0b2; text-transform: uppercase; letter-spacing: .08em; font-size: 11px; font-weight: 700; padding: 0 10px; }
 .content { min-width: 0; padding: 28px 30px 60px; }
+
+.button { border-radius: 8px; border: 1px solid transparent; font-weight: 650; transition: background 120ms ease, border-color 120ms ease; }
+.button-sm { padding: 6px 9px; font-size: 13px; }
+.button-md { padding: 8px 12px; font-size: 14px; }
+.button-primary { background: #3157d5; color: white; }
+.button-primary:hover { background: #294bc0; }
+.button-secondary { background: white; border-color: #d8deea; color: #344057; }
+.button-secondary:hover { background: #f8f9fc; }
+.button-danger { background: #c93838; color: white; }
+.button-ghost { background: transparent; color: #526079; }
+.button:disabled { opacity: .5; cursor: not-allowed; }
+.checkbox { width: 16px; height: 16px; accent-color: #3157d5; }
+.spinner-wrap { display: inline-flex; align-items: center; }
+.spinner { width: 16px; height: 16px; border: 2px solid #cdd5e3; border-top-color: #3157d5; border-radius: 50%; animation: spin .7s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.empty-state { text-align: center; padding: 56px 20px; color: #69758d; }
+.empty-state h3 { color: #263249; margin: 12px 0 4px; }
+.empty-state p { margin: 0 auto 16px; max-width: 420px; }
+.empty-icon { font-size: 30px; color: #8b98b1; }
