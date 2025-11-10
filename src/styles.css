@@ -43,3 +43,25 @@ kbd { border: 1px solid #d9deea; border-bottom-width: 2px; border-radius: 5px; b
 .empty-state h3 { color: #263249; margin: 12px 0 4px; }
 .empty-state p { margin: 0 auto 16px; max-width: 420px; }
 .empty-icon { font-size: 30px; color: #8b98b1; }
+
+.search-field { min-width: 220px; position: relative; display: flex; align-items: center; }
+.search-field input { width: 100%; border: 1px solid #d8deea; border-radius: 8px; background: #fff; padding: 8px 30px 8px 32px; color: #253149; }
+.search-icon { position: absolute; left: 10px; color: #8994a8; }
+.search-clear { position: absolute; right: 6px; border: 0; background: transparent; color: #748099; font-size: 18px; }
+.pagination { display: flex; align-items: center; gap: 12px; color: #69758d; font-size: 13px; }
+.pagination button { width: 30px; height: 30px; border-radius: 7px; border: 1px solid #d8deea; background: white; color: #344057; }
+.pagination button:disabled { opacity: .4; cursor: not-allowed; }
+.overlay { position: fixed; inset: 0; z-index: 100; background: rgb(15 23 42 / .36); display: flex; align-items: center; justify-content: center; padding: 24px; }
+.drawer-overlay { justify-content: flex-end; padding: 0; }
+.drawer { width: min(560px, 92vw); height: 100vh; background: #fff; box-shadow: -16px 0 45px rgb(27 37 61 / .16); overflow: auto; }
+.drawer-header, .dialog-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; padding: 20px 22px; border-bottom: 1px solid #e8ebf2; }
+.drawer-header h2, .dialog-header h2 { margin: 0; color: #182238; font-size: 18px; }
+.drawer-body { padding: 22px; }
+.dialog { width: min(520px, 94vw); background: white; border-radius: 14px; box-shadow: 0 24px 70px rgb(21 31 51 / .24); overflow: hidden; }
+.dialog-header p { color: #738098; margin: 5px 0 0; font-size: 13px; }
+.icon-button { border: 0; background: transparent; border-radius: 7px; color: #647087; font-size: 22px; line-height: 1; padding: 4px 7px; }
+.toast-region { position: fixed; right: 22px; bottom: 22px; z-index: 200; display: grid; gap: 8px; width: min(360px, calc(100vw - 44px)); }
+.toast { display: flex; justify-content: space-between; gap: 12px; align-items: center; background: #172033; color: white; border-radius: 10px; padding: 11px 12px 11px 14px; box-shadow: 0 12px 30px rgb(23 32 51 / .18); font-size: 14px; }
+.toast button { border: 0; background: transparent; color: white; font-size: 18px; }
+.toast-error { background: #8f2929; }
+.toast-success { background: #23633e; }
