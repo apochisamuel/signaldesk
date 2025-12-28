@@ -65,3 +65,25 @@ kbd { border: 1px solid #d9deea; border-bottom-width: 2px; border-radius: 5px; b
 .toast button { border: 0; background: transparent; color: white; font-size: 18px; }
 .toast-error { background: #8f2929; }
 .toast-success { background: #23633e; }
+
+.table-wrap { position: relative; border: 1px solid #e1e6ef; border-radius: 12px; overflow: hidden; background: #fff; }
+.table-loading { position: absolute; z-index: 3; right: 12px; top: 9px; display: flex; gap: 7px; align-items: center; background: #fff; color: #6c7890; border: 1px solid #dce2ed; box-shadow: 0 4px 12px rgb(31 42 68 / .08); border-radius: 8px; padding: 6px 9px; font-size: 12px; }
+.case-table { border-collapse: collapse; width: 100%; table-layout: fixed; }
+.case-table th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: #8a95aa; background: #fafbfc; padding: 10px 12px; border-bottom: 1px solid #e7ebf2; }
+.case-table td { padding: 12px; border-bottom: 1px solid #edf0f5; color: #3b465b; font-size: 13px; vertical-align: middle; }
+.case-table tbody tr { cursor: pointer; }
+.case-table tbody tr:hover { background: #fafbfe; }
+.case-table tbody tr:last-child td { border-bottom: 0; }
+.case-table .selected-row { background: #f3f6ff; }
+.case-table .select-cell { width: 44px; text-align: center; }
+.case-table th:nth-child(2) { width: 36%; }
+.case-title-cell { display: grid; gap: 4px; }
+.case-title-cell strong { color: #202c43; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.case-title-cell span { color: #8a94a7; font-size: 11px; }
+.owner-chip { display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; }
+.owner-avatar { width: 23px; height: 23px; border-radius: 50%; display: inline-grid; place-items: center; background: #edf1ff; color: #405ec3; font-size: 9px; font-weight: 750; }
+.muted { color: #98a1b2; }
+.status, .priority { display: inline-flex; align-items: center; border-radius: 999px; padding: 3px 7px; font-size: 11px; font-weight: 650; }
+.status-open { background: #eaf2ff; color: #3157a5; }.status-in_progress { background: #fff2d8; color: #8b6213; }.status-waiting { background: #f1ebff; color: #6f4ab2; }.status-resolved { background: #e5f6eb; color: #287046; }
+.priority-low { background: #f1f3f6; color: #697286; }.priority-medium { background: #e9f1ff; color: #355fa9; }.priority-high { background: #fff1dc; color: #925c0b; }.priority-urgent { background: #fde8e8; color: #a53838; }
+.age-cell { color: #7e899d !important; white-space: nowrap; }
