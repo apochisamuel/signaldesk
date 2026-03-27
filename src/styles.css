@@ -122,3 +122,9 @@ kbd { border: 1px solid #d9deea; border-bottom-width: 2px; border-radius: 5px; b
 .page-actions { display: flex; align-items: center; gap: 10px; }.filter-summary { color: #8a95aa; font-size: 12px; }
 .error-banner { display: flex; align-items: center; justify-content: space-between; gap: 16px; background: #fff0f0; color: #8e3535; border: 1px solid #f0cccc; padding: 9px 11px; border-radius: 9px; margin: 10px 0; font-size: 13px; }
 .list-footer { display: flex; justify-content: space-between; align-items: center; gap: 18px; color: #8590a4; font-size: 12px; padding: 14px 2px; }
+.command-search { padding: 16px; }.command-search .search-field { width: 100%; }.command-search .search-field input { padding-top: 10px; padding-bottom: 10px; }
+.command-hint { color: #8a95a8; padding: 28px 8px; text-align: center; font-size: 13px; }
+.search-results { list-style: none; padding: 8px 0 0; margin: 0; max-height: 350px; overflow: auto; display: grid; gap: 3px; }
+.search-results li button { width: 100%; border: 0; background: transparent; display: grid; grid-template-columns: 68px 1fr auto; gap: 9px; align-items: center; padding: 9px; border-radius: 8px; text-align: left; }
+.search-results li button:hover, .search-results li button.active { background: #f1f4fb; }
+.result-id { color: #60709a; font-size: 11px; font-weight: 700; }.result-copy { display: grid; gap: 2px; min-width: 0; }.result-copy strong { color: #273249; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }.result-copy small { color: #929bae; }
