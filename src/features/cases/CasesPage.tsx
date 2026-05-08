@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useReducer, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Button } from '../../components/Button/Button';
 import { Pagination } from '../../components/Pagination/Pagination';
 import { useDebouncedValue } from '../../hooks/useDebouncedValue';
@@ -11,6 +12,7 @@ import { CaseTable } from './CaseTable';
 import { CaseToolbar } from './CaseToolbar';
 import { caseReducer, initialCaseState } from './caseReducer';
 import type { CaseFiltersState, CasePatch, CaseRecord, CaseStatus, SortDirection, SortKey } from './types';
+import { findSavedView } from '../views/viewUtils';
 
 const defaultFilters: CaseFiltersState = { status: 'all', priority: 'all', ownerId: 'all', tag: 'all' };
 const PAGE_SIZE = 12;
@@ -22,6 +24,7 @@ interface Props {
 
 export function CasesPage({ preset = 'inbox', onNotify }: Props) {
   const [state, dispatch] = useReducer(caseReducer, initialCaseState);
+  const [searchParams] = useSearchParams();
   const [query, setQuery] = useState('');
   const debouncedQuery = useDebouncedValue(query, 220);
   const [filters, setFilters] = useState<CaseFiltersState>(() => preset === 'resolved' ? { ...defaultFilters, status: 'resolved' } : preset === 'assigned' ? { ...defaultFilters, ownerId: 'maya' } : defaultFilters);
@@ -30,6 +33,22 @@ export function CasesPage({ preset = 'inbox', onNotify }: Props) {
   const [page, setPage] = useState(1);
   const [refreshToken, setRefreshToken] = useState(0);
   const [bulkBusy, setBulkBusy] = useState(false);
+
+  const viewId = searchParams.get('view');
+  const focusCaseId = searchParams.get('case');
+
+  useEffect(() => {
+    const view = findSavedView(viewId);
+    if (!view) return;
+    setFilters(view.filters);
+    setSortKey(view.sortKey);
+    setSortDirection(view.sortDirection);
+    setPage(1);
+  }, [viewId]);
+
+  useEffect(() => {
+    if (focusCaseId) dispatch({ type: 'open-case', id: focusCaseId });
+  }, [focusCaseId]);
 
   const load = useCallback(async () => {
     dispatch({ type: 'load-start' });
