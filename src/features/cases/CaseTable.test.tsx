@@ -14,7 +14,7 @@ describe('CaseTable', () => {
   it('opens a row from the keyboard', () => {
     const onOpen = vi.fn();
     renderWithRouter(<CaseTable items={items} loading={false} selectedIds={new Set()} onToggleSelected={() => {}} onToggleVisible={() => {}} onOpen={onOpen} />);
-    fireEvent.keyDown(screen.getByText('Alpha case').closest('tr')!, { key: 'Enter' });
+    fireEvent.keyDown(screen.getByRole('button', { name: /Alpha case/ }), { key: 'Enter' });
     expect(onOpen).toHaveBeenCalledWith('SD-A');
   });
   it('toggles only the checkbox without opening the row', () => {
