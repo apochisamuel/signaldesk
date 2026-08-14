@@ -1,4 +1,5 @@
 import { fireEvent, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 import { caseFactory } from '../../test/factories';
 import { renderWithRouter } from '../../test/render';
@@ -11,10 +12,12 @@ describe('CaseTable', () => {
     expect(screen.getByText('Alpha case')).toBeInTheDocument();
     expect(screen.getByLabelText('Select SD-A')).toBeInTheDocument();
   });
-  it('opens a row from the keyboard', () => {
+  it('opens a row from the keyboard', async () => {
     const onOpen = vi.fn();
     renderWithRouter(<CaseTable items={items} loading={false} selectedIds={new Set()} onToggleSelected={() => {}} onToggleVisible={() => {}} onOpen={onOpen} />);
-    fireEvent.keyDown(screen.getByRole('button', { name: /Alpha case/ }), { key: 'Enter' });
+    const user = userEvent.setup();
+    screen.getByRole('button', { name: /Alpha case/ }).focus();
+    await user.keyboard('{Enter}');
     expect(onOpen).toHaveBeenCalledWith('SD-A');
   });
   it('toggles only the checkbox without opening the row', () => {
