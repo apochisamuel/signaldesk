@@ -160,3 +160,10 @@ kbd { border: 1px solid #d9deea; border-bottom-width: 2px; border-radius: 5px; b
   .list-footer { align-items: flex-start; flex-direction: column; }
   .drawer { width: 100vw; }
 }
+@media (max-width: 560px) {
+  .content { padding-left: 12px; padding-right: 12px; }
+  .case-table th:nth-child(5), .case-table td:nth-child(5) { display: none; }
+  .case-title-cell span { max-width: 54vw; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .page-header h1 { font-size: 23px; }
+  .dialog { width: 100%; }
+}
