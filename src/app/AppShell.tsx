@@ -31,8 +31,8 @@ export function AppShell({ children, onOpenSearch, onOpenPreferences }: AppShell
         </button>
       </header>
       <div className="workspace">
-        <aside className="sidebar" aria-label="Workspace navigation">
-          <nav className="nav-list">
+        <aside className="sidebar">
+          <nav className="nav-list" aria-label="Workspace navigation">
             {navItems.map((item) => (
               <NavLink key={item.to} to={item.to} end={item.to === '/'} className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
                 <span>{item.label}</span>
