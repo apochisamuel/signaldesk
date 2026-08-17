@@ -42,7 +42,6 @@ export function GlobalSearch({ open, onClose, onChoose }: { open: boolean; onClo
         if (event.key === 'ArrowDown') { event.preventDefault(); setActiveIndex((index) => Math.min(index + 1, results.length - 1)); }
         if (event.key === 'ArrowUp') { event.preventDefault(); setActiveIndex((index) => Math.max(index - 1, 0)); }
         if (event.key === 'Enter' && results[activeIndex]) { event.preventDefault(); choose(results[activeIndex]); }
-        if (event.key === 'Escape') onClose();
       }}>
         <SearchInput ref={inputRef} value={query} onChange={(event) => setQuery(event.target.value)} onClear={() => setQuery('')} placeholder="Try “payment” or SD-1024" label="Search all cases" />
         <SearchResults results={results} activeIndex={activeIndex} loading={loading} query={query} onHover={setActiveIndex} onChoose={choose} />
